@@ -1,6 +1,6 @@
 # vent_app
 
-A new Flutter application.
+Application Materi Pembelajaran.
 
 ## Getting Started
 
