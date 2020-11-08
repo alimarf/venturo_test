@@ -26,7 +26,7 @@ class _HomePageState extends State<HomePage> {
       setState(() {
         data = jsonResponse['data'];
       });
-      print('JsonResponse: $data');
+      print('JsonResponse: $jsonResponse');
     } else {
       print('Request failed with status: ${response.statusCode}.');
     }
@@ -47,8 +47,17 @@ class _HomePageState extends State<HomePage> {
       // SHOULD ADD THIS TO COLUMN IN HERE, WITH LIST VIEW
       // Image.network('http://tes-mobile.landa.id/top_home.png')
 
-      body: Container(
-        child: _buildListView(),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: <Widget>[
+          Image.network(
+            'http://tes-mobile.landa.id/top_home.png',
+            fit: BoxFit.cover,
+          ),
+          Expanded(
+            child: _buildListView(),
+          )
+        ],
       ),
     );
   }
