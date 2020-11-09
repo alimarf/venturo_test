@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:venturo/Drawer/nav_drawer.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
-import 'package:venturo/services/belajar.dart';
 import 'dart:convert' as convert;
 import 'package:http/http.dart' as http;
 
@@ -28,8 +27,6 @@ class _HomeScreenState extends State<HomeScreen> {
       setState(() {
         data = jsonResponse['data'];
       });
-      // data = jsonResponse['data'];
-      // var data = jsonResponse['data'];
       print('JSON RESPONSE: $data.');
     } else {
       print('Request failed with status: ${response.statusCode}.');
@@ -78,15 +75,6 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Widget _buildListView() {
-    // hKXyjyQhqSU
-    // YoutubePlayerController _controller = YoutubePlayerController(
-    //   initialVideoId: 'hKXyjyQhqSU',
-    //   flags: YoutubePlayerFlags(
-    //     autoPlay: true,
-    //     mute: true,
-    //   ),
-    // );
-
     return ListView.builder(
         padding: const EdgeInsets.all(20.0),
         itemCount: data == null ? 0 : data.length,
@@ -122,9 +110,6 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Widget _buildImageColumn(dynamic item) => Container(
-        // decoration: BoxDecoration(
-        //   color: Colors.blue[50],
-        // ),
         margin: const EdgeInsets.all(8),
         child: Column(
           children: <Widget>[
@@ -158,19 +143,4 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     );
   }
-
-  // Widget _buildRow(dynamic item) {
-  //   Card(
-  //     color: Colors.lightBlueAccent,
-  //     shape: RoundedRectangleBorder(
-  //       borderRadius: BorderRadius.circular(50.0),
-  //     ),
-  //     child: ListTile(
-  //       title: Text(
-  //         item['nama'] == null ? '' : item['nama'],
-  //         style: TextStyle(color: Colors.white),
-  //       ),
-  //     ),
-  //   );
-  // }
 }
