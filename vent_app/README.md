@@ -1,6 +1,8 @@
 # vent_app
 
-Application Materi Pembelajaran.
+Application Materi Pembelajaran. 
+
+FIX ISSUE & REVISION ON FOLDER VENTURO
 
 ## Getting Started
 
